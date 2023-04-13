@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Ejercicios_1;
 
-public class Ejercicio04 : MonoBehaviour
+namespace Ejercicios_1
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Crear un script que genere una esfera al inicio con un Rigidbody añadido
+    /// </summary>
+    public class Ejercicio04 : MonoBehaviour
     {
-        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        sphere.name = "SphereEjercicio04";
-        Rigidbody rb = sphere.AddComponent<Rigidbody>();
+        void Start()
+        {
+            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            sphere.name = "SphereEjercicio04";
+            Rigidbody rb = sphere.AddComponent<Rigidbody>();
+        }
     }
 }

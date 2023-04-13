@@ -1,21 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Ejercicios_1;
 
-public class Ejercicio10 : MonoBehaviour
+namespace Ejercicios_1
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Crear un script que cambie el nombre de todos los GameObjects de la escena en base a un atributo definido en este
+    /// </summary>
+    public class Ejercicio10 : MonoBehaviour
     {
-        GameObject[] gameObjects = GameObject.FindObjectsOfType<GameObject>();
-        string nombreNuevo = "NuevoNombre";
-
-        for(int i = 0; i < gameObjects.Length; i++)
+        //❕ public string nombreNuevo = "NuevoNombre";
+        void Start()
         {
-            if(gameObjects != null)
+            GameObject[] gameObjects = GameObject.FindObjectsOfType<GameObject>();
+            string nombreNuevo = "NuevoNombre";
+
+            for (int i = 0; i < gameObjects.Length; i++)
             {
-                gameObjects[i].name = nombreNuevo;
+                //❕ Esto no debería comprobarse por cada iteración, además FindObjectsOfType no devuelve null
+                //❕ No se si estabas tratando de comprobar cada elemento (gameObjects[i] != null), eso tendría más sentido
+                if (gameObjects != null) 
+                {
+                    gameObjects[i].name = nombreNuevo;
+                }
             }
         }
     }

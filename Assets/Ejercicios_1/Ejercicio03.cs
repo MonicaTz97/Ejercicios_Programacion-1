@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Ejercicios_1;
 
-public class Ejercicio03 : MonoBehaviour
+namespace Ejercicios_1
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Crear un script que genere un cubo al inicio y duplique su escala
+    /// </summary>
+    public class Ejercicio03 : MonoBehaviour
     {
-        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        cube.name = "CubeEjercicio03";
-        cube.transform.localScale = transform.localScale * 2;
+        void Start()
+        {
+            GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            cube.name = "CubeEjercicio03";
+            cube.transform.localScale = transform.localScale * 2;
+            //❕ cube.transform.localScale *= 2f;
+        }
     }
-
 }

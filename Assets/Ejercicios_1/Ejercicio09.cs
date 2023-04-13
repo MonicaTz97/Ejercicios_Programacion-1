@@ -1,25 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Ejercicios_1;
 
-public class Ejercicio09 : MonoBehaviour
+namespace Ejercicios_1
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Crear un script que genere 12 esferas cada una el doble de grande que la anterior
+    /// </summary>
+    public class Ejercicio09 : MonoBehaviour
     {
-        float x = 1f;
-
-        for (int i = 0; i < 12; i++)
+        void Start()
         {
-            
-            GameObject sphere01Ejercicio09 = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            float x = 1f;
 
-            sphere01Ejercicio09.transform.position = new Vector3(i * 2f, 0f, 0f);
+            for (int i = 0; i < 12; i++)
+            {
 
-            sphere01Ejercicio09.transform.localScale = new Vector3(x, x, x);
-            x *= 2;
+                GameObject sphere01Ejercicio09 = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+
+                sphere01Ejercicio09.transform.position = new Vector3(i * 2f, 0f, 0f);
+
+                sphere01Ejercicio09.transform.localScale = new Vector3(x, x, x);
+                //❕ sphere01Ejercicio09.transform.localScale = Vector3.one * x;
+                x *= 2;
+            }
+
+            //❕ Ejercicio08.CrearFiguras(PrimitiveType.Sphere, 12);
         }
     }
-
 }
